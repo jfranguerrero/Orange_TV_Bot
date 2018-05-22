@@ -4,6 +4,7 @@ import requests
 import time
 import telegram
 from telegram.error import BadRequest, RetryAfter, TimedOut, Unauthorized, NetworkError
+import os
 
 def checkwebsite():
     url = "http://m.orange.es/tienda/objetos-conectados/smart-tv/lg/televisor-49-uj620v-negro-km0/"
@@ -17,10 +18,9 @@ def checkwebsite():
 
 
 def main():
-    chatid='Chat id of user'
-    bot = telegram.Bot(token='TOKEN')
-
-    #   bot.send_message(chat_id=chat_id,text="Would you mind sharing your location and contact with me?")
+    TOKEN=os.environ['token_bot']
+    chatid=os.environ['chat_id']
+    bot = telegram.Bot(token=TOKEN)
 
     while True:
         if checkwebsite():
