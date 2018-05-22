@@ -30,8 +30,8 @@ def main():
                 time.sleep(20)
         else:
             bot.send_message(chat_id=chatid,text="Nothing now")
-            print chatid
-            
+            print (chatid)
+
         time.sleep(200)
         
 
