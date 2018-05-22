@@ -28,7 +28,10 @@ def main():
                 bot.send_message(chat_id=chatid,text="Es posible que haya stock de la TV LG 49")
             except Exception as e:
                 time.sleep(20)
-
+        else:
+            bot.send_message(chat_id=chatid,text="Nothing now")
+            print chatid
+            
         time.sleep(200)
         
 
